@@ -4,11 +4,11 @@ namespace lab1
 {
     public class Fibonacci
     {
-        double fib(int n)
+        public static double fib(int n)
         {
             return 1 / Math.Sqrt(5) * (Math.Pow((1 + Math.Sqrt(5)) / 2, n) - Math.Pow((1 - Math.Sqrt(5)) / 2, n));
         }
-        public double fibonacci_calc(double a, double b, int n, double x1, double x2, double f1, double f2, bool isFirst, int k)
+        public static double fibonacci_calc(double a, double b, int n, double x1, double x2, double f1, double f2, bool isFirst, int k)
         {
             if (n == 1)
             {
