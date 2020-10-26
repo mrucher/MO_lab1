@@ -23,23 +23,31 @@ namespace lab1
     {
         public static double function(double x, int k)
         {
+            double res;
             switch (k)
             {
                 case 1:
-                    return -1 * Math.Pow(x, 5) + 4 * Math.Pow(x, 4) - 12 * Math.Pow(x, 3) + 11 * Math.Pow(x, 2) -
+                    res = -1 * Math.Pow(x, 5) + 4 * Math.Pow(x, 4) - 12 * Math.Pow(x, 3) + 11 * Math.Pow(x, 2) -
                            2 * x + 1;
+                    break;
                 case 2:
-                    return Math.Log10(x - 2) + Math.Pow(Math.Log10(10 - x), 2) - Math.Pow(x, 0.2);
+                    res = Math.Log10(x - 2) + Math.Pow(Math.Log10(10 - x), 2) - Math.Pow(x, 0.2);
+                    break;
                 case 3:
-                    return -3 * x * Math.Sin(0.75 * x) + Math.Exp(-2 * x);
+                    res = -3 * x * Math.Sin(0.75 * x) + Math.Exp(-2 * x);
+                    break;
                 case 4:
-                    return Math.Exp(3 * x) + 5 * Math.Exp(-2 * x);
+                    res = Math.Exp(3 * x) + 5 * Math.Exp(-2 * x);
+                    break;
                 case 5:
-                    return 0.2 * x * Math.Log10(x) + Math.Pow(x - 2.3, 2);
+                    res = 0.2 * x * Math.Log10(x) + Math.Pow(x - 2.3, 2);
+                    break;
                 default:
-                    return 0;
+                    res = 0;
                     break;
             }
+
+            return res;
         }
 
         public static Interval GetInterval(int k)

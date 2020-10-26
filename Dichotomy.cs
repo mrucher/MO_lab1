@@ -1,12 +1,14 @@
-﻿namespace lab1
+﻿using System;
+
+namespace lab1
 {
     public class Dichotomy
     {
         //delta = eps/3
         
-        public double dichotomy_calc(double a, double b, double eps, double delta, int k)
+        public static double dichotomy_calc(double a, double b, double eps, double delta, int k)
         {
-            if (a - b < eps)
+            if (Math.Abs(a - b) < eps)
             {
                 return (a + b) / 2;
             }
@@ -16,6 +18,7 @@
 
             double f1 = Functions.function(x1, k);
             double f2 = Functions.function(x2, k);
+            
 
             if (f1 < f2)
             {

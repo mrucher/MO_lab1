@@ -1,4 +1,6 @@
-﻿namespace lab1
+﻿using System;
+
+namespace lab1
 {
     public class GoldenSection
     {
@@ -6,7 +8,7 @@
             double x_old,
             int k)
         {
-            if (b - a < eps)
+            if (Math.Abs(b - a) < eps)
             {
                 return (a + 2) / 2;
             }
