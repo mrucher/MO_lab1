@@ -4,22 +4,23 @@ namespace lab1
 {
     public class GoldenSection
     {
-        public double goldenSection_calc(double a, double b, double eps, bool isFirst, bool isMoveLeft, double f_old,
+        public static double goldenSection_calc(double a, double b, double eps, bool isFirst, bool isMoveLeft, double f_old,
             double x_old,
             int k)
         {
             if (Math.Abs(b - a) < eps)
             {
-                return (a + 2) / 2;
+                return (a + b) / 2;
             }
 
             if (isFirst)
             {
                 double x1 = a + 0.381966011 * (b - a);
                 double x2 = b - 0.381966011 * (b - a);
-
+                
                 double f1 = Functions.function(x1, k);
                 double f2 = Functions.function(x2, k);
+                
 
                 if (f1 >= f2)
                 {
@@ -32,6 +33,7 @@ namespace lab1
             }
             else
             {
+                
                 double x, f;
                 if (isMoveLeft)
                 {
@@ -49,7 +51,7 @@ namespace lab1
                 }
                 else
                 {
-                    x = b - b - 0.381966011 * (b - a);
+                    x = b - 0.381966011 * (b - a);
                     f = Functions.function(x, k);
 
                     if (f_old >= f)
