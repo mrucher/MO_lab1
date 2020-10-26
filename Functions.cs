@@ -2,9 +2,9 @@
 {
     public class Functions
     {
-        public static double function(double x, int n)
+        public static double function(double x, int k)
         {
-            switch (n)
+            switch (k)
             {
                 case 1:
                     return 2 * x;
