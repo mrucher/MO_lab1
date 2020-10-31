@@ -32,7 +32,22 @@ namespace lab1
                 interval = Functions.GetInterval(i);
                 Console.WriteLine(Fibonacci.fibonacci_calc(interval.A, interval.B, 50, 0, 0, 0, 0, true, i));
             }
-            
+
+            Console.WriteLine();
+            Console.WriteLine("Алгоритм Парабол:");
+            for (int i = 1; i <= 5; i++)
+            {
+                interval = Functions.GetInterval(i);
+                Console.WriteLine(Parabola.ParabolaCalc(interval.A, 0, interval.B, 0, 0, 0, i, EPS, true));
+            }
+
+            /*Console.WriteLine();
+            Console.WriteLine("Алгоритм Брента:");
+            for (int i = 1; i <= 5; i++)
+            {
+                interval = Functions.GetInterval(i);
+                Console.WriteLine(Parabola.ParabolaCalc(interval.A, interval.B, i, EPS));
+            }*/
         }
     }
 }
