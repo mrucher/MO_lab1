@@ -42,6 +42,9 @@ namespace lab1
                 case 5:
                     res = 0.2 * x * Math.Log10(x) + Math.Pow(x - 2.3, 2);
                     break;
+                case 6:
+                    res = Math.Cos(10 * x) / Math.Exp(x);
+                    break;
                 default:
                     res = 0;
                     break;
@@ -74,6 +77,10 @@ namespace lab1
                 case 5:
                     interval.A = 0.5;
                     interval.B = 2.5;
+                    break;
+                case 6:
+                    interval.A = 1;
+                    interval.B = 5;
                     break;
                 default:
                     break;

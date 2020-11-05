@@ -13,6 +13,7 @@ namespace lab1
         private static readonly double k = (3 - Math.Sqrt(5)) / 2;
         public static double BrentCalc(double a, double c, double x, double w, double v, double d, double e, double fa, double fc, double fx, double fw, double fv, double EPS, int i, bool isFirst = false)
         {
+            bool calcGoldenSection = false;
             if (isFirst)
             {
                 x = w = v = (a + c) / 2;
@@ -21,18 +22,19 @@ namespace lab1
                 e = c - a;
             }
 
-            if (Math.Abs(c - a) < EPS)
+            if (Math.Abs(c - a) < 2 * EPS)
             {
                 return (c + a) / 2;
             }
 
-            /*            if (Math.Max(Math.Abs(x - a), Math.Abs(c - x)) < EPS)
+            /*            if (Math.Max(Math.Abs(x - a), Math.Abs(c - x)) < 2 * EPS)
                         {
                             return x;
                         }*/
+
             double fu;
             double g;
-            double u;
+            double u = 0;
             g = e;
             e = d;
 
@@ -50,8 +52,17 @@ namespace lab1
                 {
                     d = Math.Abs(u - x);
                 }
+                else
+                {
+                    calcGoldenSection = true;
+                }
             }
             else
+            {
+                calcGoldenSection = true;
+            }
+
+            if (calcGoldenSection)
             {
                 if (x < (c + a) / 2)
                 {
